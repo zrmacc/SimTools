@@ -1,0 +1,15 @@
+Package: SimTools
+Title: Utilities for Simulation Studies
+Version: 0.0.1
+Authors@R: person("Zachary", "McCaw", email = "zmccaw@g.harvard.edu", role = c("aut", "cre"))
+Description: Collected functions useful for simulation studies. 
+Depends: R (>= 3.5.0)
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports:
+	foreach,
+	plyr,
+	snpStats,
+	stats
+RoxygenNote: 6.1.0
