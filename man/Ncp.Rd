@@ -4,7 +4,7 @@
 \alias{Ncp}
 \title{Estimate Non-Centrality Parameter}
 \usage{
-Ncp(p, df = 1, sig = 0.05)
+Ncp(p, df = 1, sig = 0.05, simple = F)
 }
 \arguments{
 \item{p}{Vector of p-values.}
@@ -12,6 +12,8 @@ Ncp(p, df = 1, sig = 0.05)
 \item{df}{Degrees of freedom.}
 
 \item{sig}{Significance level for CI.}
+
+\item{simple}{If TRUE, returns estimated size and SE only.}
 }
 \description{
 Estimates the non-centrality parameter of the chi-square distribution using a

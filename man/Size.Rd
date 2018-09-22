@@ -4,7 +4,7 @@
 \alias{Size}
 \title{Estimate Rejection Probability}
 \usage{
-Size(p, a = 0.05, sig = 0.05)
+Size(p, a = 0.05, sig = 0.05, simple = F)
 }
 \arguments{
 \item{p}{Vector of p-values.}
@@ -12,6 +12,8 @@ Size(p, a = 0.05, sig = 0.05)
 \item{a}{Alpha level at which to assess size.}
 
 \item{sig}{Significance level for CI.}
+
+\item{simple}{If TRUE, returns estimated size and SE only.}
 }
 \description{
 Estimates the size of a hypothesis testing using a vector of p-values.

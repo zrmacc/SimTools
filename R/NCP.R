@@ -9,11 +9,12 @@
 #' @param p Vector of p-values.
 #' @param df Degrees of freedom.
 #' @param sig Significance level for CI.
+#' @param simple If TRUE, returns estimated size and SE only.
 #' 
 #' @importFrom stats pnorm qchisq qnorm var
 #' @export 
 
-Ncp = function(p,df=1,sig=0.05){
+Ncp = function(p,df=1,sig=0.05,simple=F){
   # Input check
   if(!is.vector(p)){stop("A numeric vector is expected for p.")};
   if((min(p)<0)||(max(p)>1)){stop("A vector of p-values is expected for p.")};
@@ -30,17 +31,27 @@ Ncp = function(p,df=1,sig=0.05){
   # Standard error
   vD = (1/n)*var(x);
   SE = sqrt(vD);
-  # Critical value
-  t = qnorm(p=sig/2,lower.tail=F);
-  # CI
-  L = d-t*SE;
-  U = d+t*SE;
-  # P-value
-  z = abs(d)/SE;
-  p = 2*pnorm(q=z,lower.tail=F);
-  # Output
-  Out = matrix(c(d,SE,L,U,p),nrow=1);
-  colnames(Out) = c("Point","SE","L","U","p");
-  rownames(Out) = c(1);
-  return(Out);
+  # If simple, output
+  if(simple){
+    # Output
+    Out = matrix(c(d,SE),nrow=1);
+    colnames(Out) = c("Point","SE");
+    rownames(Out) = c(1);
+    return(Out);
+  } else {
+  # Otherwise, calculate CI and p
+    # Critical value
+    t = qnorm(p=sig/2,lower.tail=F);
+    # CI
+    L = d-t*SE;
+    U = d+t*SE;
+    # P-value
+    z = abs(d)/SE;
+    p = 2*pnorm(q=z,lower.tail=F);
+    # Output
+    Out = matrix(c(d,SE,L,U,p),nrow=1);
+    colnames(Out) = c("Point","SE","L","U","p");
+    rownames(Out) = c(1);
+    return(Out); 
+  }
 }
