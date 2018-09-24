@@ -16,12 +16,12 @@ Skew(y, s0 = 0, sig = 0.05, simple = F)
 \item{simple}{If TRUE, returns estimated size and SE only.}
 }
 \value{
-Data.frame containing the estimated skewness, its standard error, the
+Matrix containing the estimated skewness, its standard error, the
   lower and upper confidence bounds, and a p value assessing the null
   hypothesis that the skewness is \code{s0}.
 }
 \description{
-Estimates the sample skewness using a vector of observations.
+Estimates the skewness of a distribution using a vector of observations.
 }
 \examples{
 \dontrun{

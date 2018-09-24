@@ -3,14 +3,14 @@
 
 #' Estimate Skewness
 #' 
-#' Estimates the sample skewness using a vector of observations. 
+#' Estimates the skewness of a distribution using a vector of observations. 
 #' 
 #' @param y Observations.
 #' @param s0 Reference skewness. 
 #' @param sig Significance level.
 #' @param simple If TRUE, returns estimated size and SE only.
 #' 
-#' @return Data.frame containing the estimated skewness, its standard error, the
+#' @return Matrix containing the estimated skewness, its standard error, the
 #'   lower and upper confidence bounds, and a p value assessing the null
 #'   hypothesis that the skewness is \code{s0}.
 #' 

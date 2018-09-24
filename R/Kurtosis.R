@@ -3,14 +3,14 @@
 
 #' Estimate Kurtosis
 #' 
-#' Estimates the sample kurtosis using a vector of observations. 
+#' Estimates the kurtosis of a distribution using a vector of observations. 
 #' 
 #' @param y Observations.
 #' @param k0 Reference kurtosis. 
 #' @param sig Significance level.
 #' @param simple If TRUE, returns estimated size and SE only.
 #' 
-#' @return Data.frame containing the estimated kurtosis, its standard error, the
+#' @return Matrix containing the estimated kurtosis, its standard error, the
 #'   lower and upper confidence bounds, and a p value assessing the null
 #'   hypothesis that the kurtosis is \code{k0}.
 #' 
