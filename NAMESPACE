@@ -2,9 +2,11 @@
 
 export(DrawGeno)
 export(GenoSeg)
+export(Kurtosis)
 export(Ncp)
 export(QQplot)
 export(Size)
+export(Skew)
 export(allocateP)
 export(compCumulants)
 export(compEfficiency)

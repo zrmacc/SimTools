@@ -15,6 +15,11 @@ Size(p, a = 0.05, sig = 0.05, simple = F)
 
 \item{simple}{If TRUE, returns estimated size and SE only.}
 }
+\value{
+Matrix containing the estimated size, its standard error, the
+  lower and upper confidence bounds, and a p value assessing the null
+  hypothesis that the size is alpha.
+}
 \description{
 Estimates the size of a hypothesis testing using a vector of p-values.
 }

@@ -11,8 +11,20 @@
 #' @param sig Significance level for CI.
 #' @param simple If TRUE, returns estimated size and SE only.
 #' 
+#' @return Matrix containing the estimated NCP, its standard error, the
+#'   lower and upper confidence bounds, and a p-value assessing the null
+#'   hypothesis the NCP is zero.
+#' 
 #' @importFrom stats pnorm qchisq qnorm var
 #' @export 
+#' 
+#' @examples
+#' \dontrun{
+#' # Uniform p-values
+#' p = runif(n=1e3);
+#' # Non-centrality parameter
+#' Ncp(p=p,df=1);
+#' }
 
 Ncp = function(p,df=1,sig=0.05,simple=F){
   # Input check
@@ -33,11 +45,10 @@ Ncp = function(p,df=1,sig=0.05,simple=F){
   SE = sqrt(vD);
   # If simple, output
   if(simple){
-    # Output
+    # Format
     Out = matrix(c(d,SE),nrow=1);
-    colnames(Out) = c("Point","SE");
+    colnames(Out) = c("NCP","SE");
     rownames(Out) = c(1);
-    return(Out);
   } else {
   # Otherwise, calculate CI and p
     # Critical value
@@ -48,10 +59,11 @@ Ncp = function(p,df=1,sig=0.05,simple=F){
     # P-value
     z = abs(d)/SE;
     p = 2*pnorm(q=z,lower.tail=F);
-    # Output
+    # Format
     Out = matrix(c(d,SE,L,U,p),nrow=1);
-    colnames(Out) = c("Point","SE","L","U","p");
+    colnames(Out) = c("NCP","SE","L","U","p");
     rownames(Out) = c(1);
-    return(Out); 
-  }
+  };
+  # Output
+  return(Out); 
 }

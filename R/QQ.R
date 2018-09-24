@@ -3,12 +3,15 @@
 
 #' Distribution of Negative Log P
 #' 
-#' Count the number of p values exceeding each grid point
+#' Count the number of p values exceeding each break point
 #' on the \eqn{-log_{10}} scale.
 #' 
 #' @param p Vector of p values.
 #' @param U Upper limit of discretization grid.
 #' @param B Bins.
+#' 
+#' @return A matrix containing the break points and the count of p-values
+#'   exceeding each break point.
 #' 
 #' @export
 
@@ -44,6 +47,8 @@ allocateP = function(p,U=NULL,B=1000){
 #' 
 #' @param breaks Breakpoints.
 #' @param counts Number of test statistics exceeding the breakpoint. 
+#' 
+#' @return A data.frame containing observed and expected uniform quantiles. 
 
 qqFrame = function(breaks,counts){
   # Observations
@@ -65,10 +70,15 @@ qqFrame = function(breaks,counts){
 
 #' Construct QQ Plot
 #' 
+#' Constructs a uniform quantile-quantile plot using a sequence of breakpoints,
+#' and the number of test statistics exceeding each breakpoint.
+#' 
 #' @param breaks Breakpoints.
 #' @param counts Number of test statistics exceeding the breakpoint. 
 #' @param sig Significance level for CIs.
 #' @param color Point color.
+#' 
+#' @return A ggplot. 
 #' 
 #' @import ggplot2
 #' @importFrom stats qbeta

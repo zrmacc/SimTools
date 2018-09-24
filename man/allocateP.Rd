@@ -13,7 +13,11 @@ allocateP(p, U = NULL, B = 1000)
 
 \item{B}{Bins.}
 }
+\value{
+A matrix containing the break points and the count of p-values
+  exceeding each break point.
+}
 \description{
-Count the number of p values exceeding each grid point
+Count the number of p values exceeding each break point
 on the \eqn{-log_{10}} scale.
 }

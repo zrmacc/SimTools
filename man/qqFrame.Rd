@@ -11,6 +11,9 @@ qqFrame(breaks, counts)
 
 \item{counts}{Number of test statistics exceeding the breakpoint.}
 }
+\value{
+A data.frame containing observed and expected uniform quantiles.
+}
 \description{
 Generates points for the QQ plot. Assumes that \eqn{\beta_{0}=0}, and the
 corresponding count is the total number of observations. Confidence intervals

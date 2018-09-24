@@ -15,6 +15,10 @@ QQplot(breaks, counts, sig = 0.05, color = "gray")
 
 \item{color}{Point color.}
 }
+\value{
+A ggplot.
+}
 \description{
-Construct QQ Plot
+Constructs a uniform quantile-quantile plot using a sequence of breakpoints,
+and the number of test statistics exceeding each breakpoint.
 }

@@ -15,7 +15,20 @@ Ncp(p, df = 1, sig = 0.05, simple = F)
 
 \item{simple}{If TRUE, returns estimated size and SE only.}
 }
+\value{
+Matrix containing the estimated NCP, its standard error, the
+  lower and upper confidence bounds, and a p-value assessing the null
+  hypothesis the NCP is zero.
+}
 \description{
 Estimates the non-centrality parameter of the chi-square distribution using a
 vector of p-values.
+}
+\examples{
+\dontrun{
+# Uniform p-values
+p = runif(n=1e3);
+# Non-centrality parameter
+Ncp(p=p,df=1);
+}
 }

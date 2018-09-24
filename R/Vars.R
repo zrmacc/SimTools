@@ -69,9 +69,9 @@ comp.vars = function(y1,y0,indep=F,sig=0.05){
   # Standard error (original scale)
   SE = R*SE;
   Out[2,] = c(R,SE,L,U,p);
-  
   # Formatting
   Out = data.frame(Out);
   Out = cbind("Contrast"=c("Difference","Ratio"),Out);
+  # Output
   return(Out);
 }
